@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'electric-blue': 'hsl(var(--electric-blue))',
+				'neon-green': 'hsl(var(--neon-green))',
+				'racing-red': 'hsl(var(--racing-red))',
+				'chrome-silver': 'hsl(var(--chrome-silver))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +72,16 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-electric': 'var(--gradient-electric)',
+				'gradient-speed': 'var(--gradient-speed)'
+			},
+			boxShadow: {
+				'neon': 'var(--shadow-neon)',
+				'electric': 'var(--shadow-electric)',
+				'glow': 'var(--glow-primary)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +99,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: 'var(--shadow-neon)'
+					},
+					'50%': {
+						boxShadow: 'var(--glow-primary)'
+					}
+				},
+				'slide-up': {
+					from: {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					to: {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'slide-up': 'slide-up 0.6s ease-out'
 			}
 		}
 	},
